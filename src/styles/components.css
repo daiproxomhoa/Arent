@@ -1,0 +1,38 @@
+.popper {
+    position: relative;
+    display: flex;
+}
+
+.popper:hover .popperContent {
+    opacity: 1;
+    visibility: visible;
+    animation: 0.3s show-up ease-in-out;
+}
+
+.popper:hover .caret {
+    transform: rotate(180deg);
+}
+
+.popper .popperContent {
+    left: 50%;
+}
+
+.popper .popperContentLeft {
+    left: -100%;
+}
+
+.popper .popperContentRight {
+    left: 0px;
+    transform: translateX(-5%);
+}
+
+.popperContent {
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    padding-top: 12px;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+}
