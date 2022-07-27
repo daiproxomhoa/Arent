@@ -1,13 +1,10 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const ChartBox = () => {
   const [filter, setFilter] = useState<number>(0);
-  const ref = useRef<any>(null);
-  useEffect(() => {
-    ref.current?.chart?.reflow();
-  });
+
   return (
     <div className="text-white bg-grey  py-4 px-6">
       <p className="body1">
@@ -15,7 +12,6 @@ const ChartBox = () => {
       </p>
       <HighchartsReact
         highcharts={Highcharts}
-        ref={ref}
         options={{
           xAxis: {
             categories: [

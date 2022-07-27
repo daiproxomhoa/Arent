@@ -12,9 +12,9 @@ import ChartBox from "./ChartBox";
 const MainPage = () => {
   return (
     <div>
-      <div className="flex">
+      <div className="flex flex-grow">
         <img src={MainPhoto} alt="main_photo" className="object-cover" />
-        <div className="flex-1">
+        <div className="flex-1 block">
           <ChartBox />
         </div>
       </div>

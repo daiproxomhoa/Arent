@@ -1,17 +1,11 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { useEffect, useRef } from "react";
 
 const ChartBox = () => {
-  const ref = useRef<any>(null);
-  useEffect(() => {
-    ref.current?.chart?.reflow();
-  });
   return (
     <>
       <HighchartsReact
         highcharts={Highcharts}
-        ref={ref}
         options={{
           xAxis: {
             categories: [
@@ -42,7 +36,9 @@ const ChartBox = () => {
             gridLineWidth: 0,
             opposite: true,
           },
-          chart: { backgroundColor: "#2E2E2E" },
+          chart: {
+            backgroundColor: "#2E2E2E",
+          },
           legend: {
             enabled: false,
           },

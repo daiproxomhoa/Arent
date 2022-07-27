@@ -33,7 +33,7 @@ const DefaultLayout = () => {
   ];
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen overflow-y-auto overflow-x-hidden">
       <header className="flex bg-grey text-white">
         <div className="container flex items-center">
           <div className="flex-1 justify-start">
@@ -98,7 +98,7 @@ const DefaultLayout = () => {
           </div>
         </div>
       </header>
-      <div className="flex-1 h-full w-full">
+      <div className="flex-1 h-full w-full flex flex-col">
         <Outlet />
       </div>
       <footer className="bg-grey text-white py-7">
