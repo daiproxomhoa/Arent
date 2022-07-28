@@ -1,4 +1,4 @@
-import NewBox from "./NewBox";
+import NewList from "./NewList";
 
 const NewPage = () => {
   return (
@@ -34,7 +34,7 @@ const NewPage = () => {
           );
         })}
       </div>
-      <NewBox />
+      <NewList />
     </div>
   );
 };

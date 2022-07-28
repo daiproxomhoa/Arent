@@ -1,7 +1,14 @@
 import { Outlet } from "react-router";
 import MyLink from "../common/MyLink";
 import { ROUTES } from "../routes";
-import { InfoIcon, MemoIcon, LogoIcon, IconChallenge, IconMenu } from "../svg";
+import {
+  InfoIcon,
+  MemoIcon,
+  LogoIcon,
+  IconChallenge,
+  IconMenu,
+  IconScroll,
+} from "../svg";
 
 const DefaultLayout = () => {
   const Tabs = [
@@ -28,16 +35,18 @@ const DefaultLayout = () => {
         </div>
       ),
       title: "お知らせ",
-      path: ROUTES.new,
+      path: ROUTES.news,
     },
   ];
 
   return (
-    <main className="flex flex-col min-h-screen overflow-y-auto overflow-x-hidden">
-      <header className="flex bg-grey text-white">
+    <main className="flex flex-col min-h-screen">
+      <header className="flex bg-grey text-white sticky top-0 z-50">
         <div className="container flex items-center">
           <div className="flex-1 justify-start">
-            <LogoIcon />
+            <MyLink to="/">
+              <LogoIcon />
+            </MyLink>
           </div>
           <div className="flex gap-4 items-center">
             {Tabs.map((item, index) => {
@@ -53,7 +62,7 @@ const DefaultLayout = () => {
               );
             })}
           </div>
-          <div className="popper h-full flex justify-center items-center ml-8">
+          <div className="popper h-full flex justify-center items-center ml-8 cursor-pointer">
             <IconMenu />
             <div className={"popperContent popperContentLeft"} tabIndex={-1}>
               <div className="min-w-[280px] bg-grey2 text-white flex flex-col">
@@ -100,6 +109,14 @@ const DefaultLayout = () => {
       </header>
       <div className="flex-1 h-full w-full flex flex-col">
         <Outlet />
+        <button
+          className="fixed right-2 md:right-10 bottom-40 rounded-full bg-white"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          <IconScroll />
+        </button>
       </div>
       <footer className="bg-grey text-white py-7">
         <div className="container flex gap-11 flex-wrap">
